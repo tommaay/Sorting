@@ -10,15 +10,25 @@ def selection_sort(arr):
     return arr
 
 
-print(selection_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
-
 # # TO-DO:  implement the Bubble Sort function below
-# def bubble_sort(arr):
+def bubble_sort(arr):
+    swapped = True
+    while swapped:  # continue iterating through the array and sorting
+        round_swapped = False  # set false and change it only if there's a swap
+        for i in range(len(arr)-1):  # iterate though each num
+            right = arr[i+1]
+            left = arr[i]
+            if right < left:
+                arr[i] = right
+                arr[i+1] = left
+                round_swapped = True
+        swapped = round_swapped
+    return arr
 
-#     return arr
+    # # STRETCH: implement the Count Sort function below
+    # def count_sort(arr, maximum=-1):
+
+    #     return arr
 
 
-# # STRETCH: implement the Count Sort function below
-# def count_sort(arr, maximum=-1):
-
-#     return arr
+print(bubble_sort([-2, 7, 3, -9, 5, 1, 0, 4, -6]))
